@@ -1,14 +1,14 @@
 # 🎮 PC Club Bot
 
-Telegram-бот для компьютерного клуба. Информирует клиентов об акциях, ценах и реферальной программе. Выдаёт промокоды через интерактивную викторину.
+A Telegram bot for a computer club. Informs clients about promotions, pricing, and the referral program. Rewards engaged users with promo codes through an interactive quiz.
 
-## ✨ Функции
+## ✨ Features
 
-- **📈 Акции** — актуальные акции клуба (скидки студентам, бонусы на день рождения и т.д.)
-- **💰 Цены** — таблица тарифов по группам клиентов и времени суток
-- **🎁 Реферальная программа** — информация о бонусах за приглашение друзей
-- **🎁 Промокоды** — викторина с вопросами о клубе, правильные ответы дают промокод на скидку
-- **ℹ️ Информация** — адрес, телефон, режим работы
+- **📈 Promotions** — current club deals (student discounts, birthday bonuses, etc.)
+- **💰 Pricing** — rate table by client group and time of day
+- **🎁 Referral Program** — info on bonuses for inviting friends
+- **🎁 Promo Codes** — a quiz about the club; correct answers unlock a discount code
+- **ℹ️ Info** — address, phone number, and opening hours
 
 ## 🛠 Tech Stack
 
@@ -16,65 +16,64 @@ Telegram-бот для компьютерного клуба. Информиру
 ![aiogram](https://img.shields.io/badge/aiogram_3-2CA5E0?style=flat-square&logo=telegram&logoColor=white)
 
 - **Python 3.11+**
-- **aiogram 3** — асинхронный фреймворк для Telegram Bot API
-- **python-dotenv** — управление переменными окружения
+- **aiogram 3** — async Telegram Bot API framework
+- **python-dotenv** — environment variable management
 
-## 🚀 Быстрый старт
+## 🚀 Quick Start
 
-### 1. Клонируй репозиторий
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/buklee/tgbot-pcclub.git
 cd tgbot-pcclub
 ```
 
-### 2. Установи зависимости
+### 2. Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Создай `.env` файл
+### 3. Create a `.env` file
 
 ```bash
 cp .env.example .env
 ```
 
-Впиши токен бота (получить у [@BotFather](https://t.me/BotFather)):
+Fill in your bot token (get it from [@BotFather](https://t.me/BotFather)):
 
 ```env
 BOT_TOKEN=your_bot_token_here
 ```
 
-### 4. Запусти
+### 4. Run
 
 ```bash
 python bot.py
 ```
 
-## ⚙️ Конфигурация
+## ⚙️ Configuration
 
-Все настройки викторины и промокодов задаются прямо в `bot.py`:
+All quiz and promo code settings are configured directly in `bot.py`:
 
-| Параметр | Описание |
+| Parameter | Description |
 |---|---|
-| `promo_codes` | Список доступных промокодов |
-| `questions` | Вопросы для викторины (первый вариант = правильный) |
-| Количество вопросов | `random.sample(questions, 5)` — меняй число |
-| Порог правильных ответов | `if data["correct"] >= 4` — меняй число |
+| `promo_codes` | List of available promo codes |
+| `questions` | Quiz questions (first option = correct answer) |
+| Number of questions | `random.sample(questions, 5)` — change the number |
+| Correct answers threshold | `if data["correct"] >= 4` — change the number |
 
-## 📁 Структура
+## 📁 Structure
 
 ```
 tgbot-pcclub/
-├── bot.py            # Основной файл бота
-├── used_users.json   # Создаётся автоматически (список использовавших промокод)
-├── .env.example      # Шаблон переменных окружения
+├── bot.py            # Main bot file
+├── .env.example      # Environment variable template
 ├── requirements.txt
 └── README.md
 ```
 
-## 📫 Контакты
+## 📫 Contact
 
 - **Telegram:** [@buklee](https://t.me/buklee)
 - **Email:** bukleeff@gmail.com
